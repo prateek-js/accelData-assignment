@@ -1,0 +1,103 @@
+<div class="main-layout">
+  <div fxLayout="column" fxLayoutAlign="start stretch" class="order-container">
+    <div class="sub-title"> Order a Burger Now!</div>
+    <div class="content">
+      <form [formGroup]="orderForm" novalidate class="order-burger-form" >
+        <div class="fields-block">
+          <mat-label class="fields-label required">Name</mat-label>
+          <mat-form-field appearance="fill" class="form-fields">
+              <input class="input-fields" matInput placeholder="Enter Your Name" formControlName="name" required>
+          </mat-form-field>
+        </div>
+        <div class="fields-block bun-block">
+          <mat-label class="fields-label">Bun(5 INR per Bun/ 2 Bun per Burger)</mat-label>
+          <mat-label class="fields-label">2</mat-label>
+        </div>
+        <div class="fields-block">
+          <mat-label class="fields-label">Add Salad(5 INR)</mat-label>
+          <div class="custom-control custom-switch">
+            <input type="checkbox" class="custom-control-input" (change)="calcPrice()"
+              formControlName="isSaladAdded" id="saladFieldId" />
+            <label class="custom-control-label" for="saladFieldId"></label>
+          </div>
+        </div>
+        <div class="fields-block">
+          <mat-label class="fields-label">Add Cutlets(2 INR per piece)</mat-label>
+          <mat-form-field appearance="fill" class="form-fields">
+              <input type="number" min=0 class="input-fields" matInput placeholder="Add Cutlets" 
+              (change)="calcPrice()" formControlName="cutlet" autocomplete="false">
+          </mat-form-field>
+        </div>
+        <div class="fields-block">
+          <mat-label class="fields-label">Add Cheese Slice(1 INR per slice)</mat-label>
+          <mat-form-field appearance="fill" class="form-fields">
+              <input type="number" min=0 class="input-fields" matInput placeholder="Add Cheese Slices" 
+              (change)="calcPrice()" formControlName="cheeseSlices" autocomplete="false">
+          </mat-form-field>
+        </div>
+        <div class="fields-block price-block">
+          <mat-label class="fields-label">Total Burger Cost:</mat-label>
+          <mat-label class="fields-label">{{totalPrice}} INR</mat-label>
+        </div>
+        <button mat-flat-button class="submit-button" [disabled]="!orderForm.valid" (click)="orderBurger()">Place Order</button>
+      </form>
+    </div>
+  </div>
+</div>
+
+<!-- <div class="main-container">
+    <form [formGroup]="orderForm" novalidate>
+      <div class="order-form">
+        <mat-form-field appearance="fill" class="form-fields">
+          <mat-label class="fields-label required">Name</mat-label>
+          <input matInput placeholder="Enter your Name" formControlName="name" required>
+        </mat-form-field>
+
+        <mat-form-field appearance="fill">
+          <mat-label>2 Bun (fix price Rs 5 each bun and fix quantity 2 user can not edit the bun quantity)</mat-label>
+        </mat-form-field> -->
+
+        <!-- <mat-form-field appearance="fill">
+          <input type="checkbox" class="custom-control-input" (change)="isSaladAdded($event)"
+            formControlName = "isSaladAdded" id="saladId">
+          <label class="custom-control-label" for="saladId">Salad Added</label>
+        </mat-form-field> -->
+
+        <!-- <mat-form-field appearance="fill" class="form-fields">
+          <mat-label class="fields-label">Add Cheese Slices (Rs 1 per slice)</mat-label>
+          <input type="number" min="0"
+            matInput placeholder="Add Cheese Slices" formControlName="cheeseSlices" required>
+        </mat-form-field>
+
+        <mat-form-field appearance="fill" class="form-fields">
+          <mat-label class="fields-label">Add Cutlet (Rs 2 per cutlet)</mat-label>
+          <input type="number" min="0"
+            matInput placeholder="Add Cutlet" formControlName="cutlet" required>
+        </mat-form-field>
+
+      </div>
+      <div>
+        <h3>Total Price of Burger - {{totalPrice}}</h3>
+      </div> -->
+      <!-- <mat-form-field appearance="fill"
+          [hideRequiredMarker]="hideRequiredControl.value"
+          [floatLabel]="floatLabelControl.value">
+        <input matInput placeholder="Simple placeholder" required>
+      </mat-form-field> -->
+  
+      <!-- <mat-form-field appearance="fill" [floatLabel]="floatLabelControl.value">
+        <mat-label>Both a label and a placeholder</mat-label>
+        <input matInput placeholder="Simple placeholder">
+      </mat-form-field> -->
+  
+      <!-- <mat-form-field appearance="fill"
+          [hideRequiredMarker]="hideRequiredControl.value"
+          [floatLabel]="floatLabelControl.value">
+        <mat-select required>
+          <mat-option>-- None --</mat-option>
+          <mat-option value="option">Option</mat-option>
+        </mat-select>
+        <mat-label><mat-icon>favorite</mat-icon> <b> Fancy</b> <i> label</i></mat-label>
+      </mat-form-field> -->
+    <!-- </form>
+  </div> --> 

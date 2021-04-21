@@ -1,0 +1,61 @@
+<div class="main-layout">
+  <div *ngIf="allOrders.length > 0">
+    <div class="search-box">
+      <mat-form-field appearance="fill">
+          <input matInput type="text" class="search-input" placeholder="Search Order By Name"
+              [(ngModel)]="searchword" #searchBox
+              (keyup)="searchThisWithDebounce($event.target.value)">
+          <mat-icon matPrefix aria-hidden="false" class="icon-search" :before
+              aria-label="search icon"></mat-icon>
+          <button mat-button *ngIf="searchword" matSuffix mat-icon-button
+              (click)="searchword='' ; searchThis()">
+              <mat-icon class="icon-close" :before></mat-icon>
+          </button>
+      </mat-form-field>
+    </div>
+
+    <mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+  
+      <ng-container matColumnDef="username">
+        <mat-header-cell *matHeaderCellDef> Ordered By :-</mat-header-cell>
+        <mat-cell *matCellDef="let row"> {{row.username}} </mat-cell>
+        <mat-footer-cell *matFooterCellDef></mat-footer-cell>
+      </ng-container>
+    
+      <ng-container matColumnDef="saladAdded">
+        <mat-header-cell *matHeaderCellDef> Salad Added </mat-header-cell>
+        <mat-cell *matCellDef="let row"> {{row.saladAdded ? 'Yes' : 'No'}} </mat-cell>
+        <mat-footer-cell *matFooterCellDef></mat-footer-cell>
+      </ng-container>
+    
+
+      <ng-container matColumnDef="cutlets">
+        <mat-header-cell *matHeaderCellDef> No Of Cutlets </mat-header-cell>
+        <mat-cell *matCellDef="let row"> {{row.cutlets}} </mat-cell>
+        <mat-footer-cell *matFooterCellDef></mat-footer-cell>
+      </ng-container>
+    
+
+      <ng-container matColumnDef="cheeseSlices">
+        <mat-header-cell *matHeaderCellDef> No Of Cheese Slices </mat-header-cell>
+        <mat-cell *matCellDef="let row"> {{row.cheeseSlices}} </mat-cell>
+        <mat-footer-cell *matFooterCellDef></mat-footer-cell>
+      </ng-container>
+  
+
+      <ng-container matColumnDef="totalPrice">
+          <mat-header-cell *matHeaderCellDef> Total Price of Burger </mat-header-cell>
+          <mat-cell *matCellDef="let row"> {{row.totalPrice}} </mat-cell>
+          <mat-footer-cell *matFooterCellDef>Total: {{ calculateTotal() }}</mat-footer-cell>
+        </ng-container>
+    
+      <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+      <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+      <mat-footer-row class="sticky-footer" *matFooterRowDef="displayedColumns"></mat-footer-row>
+    </mat-table>
+  </div>
+  <div class="no-records" *ngIf="allOrders.length === 0">
+    No Burgers Ordered Yet!
+  </div>
+</div>
+

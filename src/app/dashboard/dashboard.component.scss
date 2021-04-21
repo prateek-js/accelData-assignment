@@ -1,0 +1,151 @@
+.main-layout {
+  display: flex;
+  flex-direction: row;
+  height: 100%;
+  width: 100%;
+  padding: 2.5rem;
+  .order-container {
+    width: auto;
+    margin-top: 2.5rem;
+    overflow: hidden;
+    margin: 0 10rem;
+    flex: 1;
+    .sub-title {
+      font-size: 1.5rem;
+      color: #3a404d;
+      margin: auto;
+      font-weight: 600;
+      text-align: center;
+      padding-bottom: 1rem;
+      border-bottom: 2px solid #3a404d;
+    }
+    .content {
+      display: flex;
+      flex-direction: row;
+      place-content: flex-start;
+      .order-burger-form {
+        display: flex;
+        flex-direction: column;
+        margin-top: 1.3125rem;
+        mat-form-field {
+          margin: auto;
+          .mat-input-element::placeholder {
+            font-size: 0.6875rem;
+            color: #a3a3a3;
+          }
+        }
+        .custom-switch {
+            padding-left: 4rem !important;
+        }
+        .fields-block {
+            display: flex;
+            flex-basis: auto;
+            flex-direction: row;
+            align-items: center;
+            place-content: center;
+            margin-bottom: 0.75rem;
+            justify-content: flex-start;
+            .fields-label {
+                margin-left: 1.875rem;
+                margin-right: 1.875rem;
+                padding-bottom: 7px;
+                font-size: 0.8125rem;
+                color: #3a404d;
+                line-height: 18px;
+                width: 12rem;
+            }
+            .form-fields {
+                height: 2.75rem;
+                border: 1px solid #e7e7e7;
+                border-radius: 4px;
+                margin-left: 1.875rem;
+                margin-right: 1.875rem;
+            }
+            .required:after {
+                color: #e32;
+                content: " *";
+            }
+            .mat-form-field-invalid {
+                color: #e32;
+                border: 1px solid #e32;
+            }
+            ::ng-deep {
+            .mat-form-field-wrapper {
+                padding-bottom: 0rem;
+            }
+            .mat-form-field-appearance-fill {
+                .mat-form-field-infix {
+                padding: 0;
+                border-top: none;
+                font-size: 0.8125rem;
+                line-height: 1.125rem;
+                background: #fff;
+                font-weight: 600;
+                color: #3a404d;
+                .mat-input-element {
+                    font-weight: 100;
+                }
+                }
+            }
+            .mat-form-field-appearance-fill .mat-form-field-flex {
+                border-radius: 4px;
+                padding: 0.75rem 0.5rem;
+                // height: 2.15rem;
+                background: #fff;
+                font-size: 0.6875rem;
+                line-height: 0rem;
+            }
+            .mat-form-field-underline {
+                display: none;
+            }
+            .mat-form-field:not(.mat-form-field-appearance-legacy)
+                .mat-form-field-suffix
+                .mat-icon-button {
+                height: 0rem;
+            }
+            .mat-form-field:not(.mat-form-field-appearance-legacy)
+                .mat-form-field-prefix
+                .mat-icon-button {
+                height: 0rem;
+            }
+            }
+        }
+        .price-block {
+            place-content: flex-start !important;
+            margin-top: 0.5rem;
+            font-weight: 600;
+        }
+        .bun-block {
+            place-content: flex-start !important;
+            margin-top: 0.5rem;
+            font-weight: 500;
+        }
+        .submit-button {
+            width: 7rem;
+            font-size: 0.8125rem;
+            color: #fff;
+            line-height: 1.125rem;
+            text-align: center;
+            border-radius: 4px;
+            height: 2rem;
+            background-color: #008040 !important;
+            font-weight: 600;
+            align-self: center;
+            margin-top: 2rem;
+            .mat-flat-button.mat-bcg-button[disabled] {
+                background-color: rgba(0, 0, 0, 0.12) !important;
+                cursor: none;
+            }
+            &:hover{
+                background-color: #44AE6D !important;
+            }
+        }
+        .submit-button:disabled {
+            background-color: #008040 !important;
+            cursor: disabled;
+            opacity: 0.4;
+        }
+      }
+    }
+  }
+}

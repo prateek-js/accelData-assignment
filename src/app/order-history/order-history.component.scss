@@ -1,0 +1,113 @@
+.main-layout {
+    display: flex;
+    flex-direction: column;
+    background: #F6F6F7;
+    width: auto;
+    overflow: auto;
+    margin: 2.875rem 11rem;
+    flex: 1;
+    .search-box {
+        margin-bottom: 1rem;    
+        .mat-form-field {
+            width: 15rem;
+            background-color: #fff;
+            height: 2.25rem;
+            border: 1px solid #c8c8c8;
+            border-radius: 4px;
+    
+            .icon-search{
+                line-height: 1.1 !important;
+            }
+            .mat-input-element::placeholder{
+                font-size: 0.6875rem;
+                color: #A3A3A3;
+            }
+        }
+        .search-input {  
+        }
+        .icon-search {
+            color: #A3A3A3;
+            font-size: 1rem;
+        }
+        .icon-close {
+            color: #A3A3A3;
+            font-size: 1rem;
+        }
+        ::ng-deep {
+            .mat-form-field-appearance-fill {
+                .mat-form-field-infix {
+                    padding: 0;
+                    border-top: none;
+                    font-size: 0.8125rem;
+                    color: #3a404d;
+                }
+            }
+            .mat-form-field-appearance-fill .mat-form-field-flex {
+                border-radius: 4px;
+                padding: 0.25rem;
+                height: 2rem;
+                background: #fff;
+                font-size: 0.6875rem;
+                line-height: 0rem;
+            }
+            .mat-form-field-underline {
+                display: none;
+            }
+            .mat-form-field:not(.mat-form-field-appearance-legacy) .mat-form-field-suffix .mat-icon-button {
+                height: 0rem;
+            }
+            .mat-form-field:not(.mat-form-field-appearance-legacy) .mat-form-field-prefix .mat-icon-button {
+                height: 0rem;
+            }
+        }
+    }
+    .mat-table {
+        border: 1px solid #E0E0E0;
+        border-radius: 6px 6px 0 0;
+        max-height: 67vh;
+        overflow-y: auto;
+    }
+    mat-header-row {
+        background: #585D67;
+        max-height: 2.25rem;
+        min-height: 3rem;
+        border-radius: 6px 6px 0 0;
+    }
+    .mat-header-cell {
+        color: #fff;
+        line-height: 15px;
+        font-weight: 600;
+        border-right: 1px solid #E0E0E0;
+    
+        padding: 5px 10px;
+        font-size: 0.875rem;
+        font-weight: 400;
+        line-height: 1.1rem;
+    }
+    .mat-cell{
+        font-size: 0.875rem;
+        font-weight: 400;
+        line-height: 1;
+    }
+    mat-row {
+        min-height: 3rem;
+        display: flex;
+        align-items: stretch;
+    }
+    .mat-row:nth-child(odd){
+        background: #F6F6F7;
+    }
+    mat-cell {
+        color: #3a404d;
+        font-size: 0.6875rem;
+        line-height: 14px;
+        font-weight: 600;
+        border-right: 1px solid #E0E0E0;
+        padding: 5px 10px;
+    }
+    .no-records {
+        display: flex;
+        margin: auto;
+        align-items: center;
+    }
+}

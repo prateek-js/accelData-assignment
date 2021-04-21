@@ -1,0 +1,12 @@
+<div class="wrapper">
+    <div class="tabs-container">
+        <ul ngbNav #nav="ngbNav" [(activeId)]="activeLinkIndex" [destroyOnHide]="false" class="nav-tabs">
+            <li [ngbNavItem]="tab.index" *ngFor="let tab of tabs">
+                <a ngbNavLink [routerLink]="tab.link">
+                    {{ tab.name }}
+                    <div class="highlighter"></div>
+                </a>
+            </li>
+        </ul>
+    </div>
+</div>
